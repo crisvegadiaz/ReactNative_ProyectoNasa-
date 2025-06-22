@@ -1,17 +1,20 @@
+import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { Image, Text, View, StyleSheet, Button } from "react-native";
 
 const TodayImage = ({ date, title, url, explanation }) => {
-  const { navigate } = useNavigation();
+  const navigation = useNavigation();
 
   const handleViewPress = () => {
-    navigate("Detail", { title, date, url, explanation });
+    navigation.navigate("Detail", { title, date, url, explanation });
   };
 
   return (
     <View style={styles.container}>
-      <Image source={{ uri: url }} style={styles.img} />
-      <Text style={styles.title}>{title}</Text>
+      <Image source={{ uri: url }} style={styles.img} resizeMode="cover" />
+      <Text style={styles.title} numberOfLines={2}>
+        {title}
+      </Text>
       <Text style={styles.date}>{date}</Text>
       <View style={styles.buttonContainer}>
         <Button title="View" onPress={handleViewPress} />
@@ -22,31 +25,54 @@ const TodayImage = ({ date, title, url, explanation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#2c449d",
-    marginVertical: 16,
-    marginHorizontal: 24,
-    borderRadius: 32,
-    padding: 16,
+    backgroundColor: "#23336a",
+    marginVertical: 5,
+    marginHorizontal: 10,
+    borderRadius: 28,
+    padding: 18,
+    shadowColor: "#000",
+    shadowOpacity: 0.18,
+    shadowRadius: 12,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 6,
+    borderWidth: 1,
+    borderColor: "#3e54a3",
   },
   img: {
     width: "100%",
-    height: 190,
+    height: 210,
     borderWidth: 2,
-    borderRadius: 32,
-    borderColor: "#fff",
+    borderRadius: 20,
+    borderColor: "#a3b8ff",
+    marginBottom: 14,
+    backgroundColor: "#1a2540",
   },
   title: {
     color: "#fff",
-    fontSize: 20,
-    marginVertical: 12,
+    fontSize: 22,
+    marginBottom: 8,
     fontWeight: "bold",
+    letterSpacing: 0.5,
+    textShadowColor: "#1a2540",
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   date: {
-    color: "#fff",
-    fontSize: 16,
+    color: "#b3c6ff",
+    fontSize: 15,
+    marginBottom: 10,
+    fontStyle: "italic",
   },
   buttonContainer: {
-    alignItems: "flex-end",
+    marginTop: 12,
+    backgroundColor: "#3e54a3",
+    borderRadius: 16,
+    overflow: "hidden",
+    shadowColor: "#000",
+    shadowOpacity: 0.12,
+    shadowRadius: 4,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 2,
   },
 });
 
