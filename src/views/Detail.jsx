@@ -1,6 +1,6 @@
 import { useRoute } from "@react-navigation/native";
 import { Text, View, StyleSheet, Image, ScrollView } from "react-native";
-import Header from "../../components/Header/Header";
+import Header from "../components/Header";
 
 function Detail() {
   const {

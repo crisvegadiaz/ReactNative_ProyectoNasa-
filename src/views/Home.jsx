@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { View, StyleSheet } from "react-native";
-import fetchApi from "../../utils/fetch";
+import fetchApi from "../utils/fetch";
 import { format, sub } from "date-fns";
-import Header from "../../components/Header/Header";
-import TodayImage from "../../components/TodaysImage/TodaysImage";
-import LastFiveDaysImage from "../../components/LastFiveDaysImage/LastFiveDaysImage";
+import Header from "../components/Header";
+import TodayImage from "../components/TodaysImage";
+import LastFiveDaysImage from "../components/LastFiveDaysImage";
 
 function Home() {
   const [todaysImage, setTodaysImage] = useState({});

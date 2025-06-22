@@ -1,5 +1,5 @@
 import { Text, View, StyleSheet, ScrollView } from "react-native";
-import PostImage from "../PostImage/PostImage";
+import PostImage from "./PostImage";
 
 function LastFiveDaysImage({ postImages }) {
   return (

@@ -8,7 +8,7 @@ function Header() {
       </View>
       <View style={styles.rightContainer}>
         <Image
-          source={require("../../../assets/nasaLogo.png")}
+          source={require("../../assets/nasaLogo.png")}
           style={styles.img}
         />
       </View>
